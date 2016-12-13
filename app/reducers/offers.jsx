@@ -1,14 +1,15 @@
 import axios from 'axios'
 
-const reducer = (state=null, action) => {
-  switch(action.type) {
-  case GETOFFER:
-    return action.offers  
+const GETOFFER = 'GETOFFER'
+
+const reducer = (state = [], action) => {
+  switch (action.type) {
+    case GETOFFER:
+      return action.offers
   }
   return state
 }
 
-const GETOFFER = 'GETOFFER'
 export const allOffers = offers => ({
   type: GETOFFER, offers
 })
@@ -16,8 +17,9 @@ export const allOffers = offers => ({
 export const getOffers = () =>
   dispatch =>
     axios.get('/api/posts/offers')
+      .then( response => response.data)
       .then( offers => dispatch(allOffers(offers)))
-      .catch(console.log.bind(console))    
+      .catch(console.log.bind(console))
 
 
 export default reducer

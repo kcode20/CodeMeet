@@ -11,6 +11,12 @@ import App from './components/App'
 import Signup from './components/Signup'
 import Offers from './components/Offers'
 
+import {getOffers} from './reducers/offers'
+
+function onOffersEnter () {
+  store.dispatch(getOffers());
+}
+
 render (
   <Provider store={store}>
     <Router history={browserHistory}>
@@ -18,7 +24,7 @@ render (
         <IndexRedirect to="/login" />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
-        <Route path="/offers" component={Offers} />
+        <Route path="/offers" onEnter={onOffersEnter} component={Offers} />
       </Route>
     </Router>
   </Provider>,

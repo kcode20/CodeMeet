@@ -21,11 +21,11 @@ export const Navbar = ({user, logout})=> (
           <div className="container">
             <div className="row">
               <div className="col-xs-1">
-                <div id="fh5co-logo"><a href="index.html">Learn<span>.</span></a></div>
+                <div id="fh5co-logo"><Link to="/">Learn<span>.</span></Link></div>
               </div>
               <div className="col-xs-11 text-right menu-1">
                 <ul>
-                  <li className="active"><a href="index.html">Home</a></li>
+                  <li className="active"><Link to="/">Home</Link></li>
                   {user && <li><Link to="/offers">Offers</Link></li>}
                   <li><a href="courses.html">About Us</a></li>
                   <li><a href="contact.html">Contact</a></li>
@@ -35,12 +35,12 @@ export const Navbar = ({user, logout})=> (
                                   <li><span><Link to="/signup"> Sign Up </Link></span></li>
                                   </span>
                                 }
-                  
+
                   <li className="btn-cta"><a href="#"><span>Create a Course</span></a></li>
                 </ul>
               </div>
             </div>
-            
+
           </div>
         </div>
       </nav>
