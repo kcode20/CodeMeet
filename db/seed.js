@@ -1,8 +1,12 @@
 const db = require('APP/db')
 
 const seedPosts = () => db.Promise.map([
-  {title: 'so many', urlTitle: 'god@example.com', content: '1234', status: 'offer', tags: ['english', 'coding']},
-  {title: 'Barack Obama', urlTitle: 'barack@example.gov', content: '1234', status: 'offer', tags: ['coding', 'spanish']},
+  {title: 'Need help practing data structures', urlTitle: 'god@example.com', content: 'Hi, I\'m having trouble understanding data strucutres', status: 'request', tags: ['english', 'coding', 'data strucutres']},
+  {title: 'I want to learn to code-don\'t know where to start', urlTitle: 'barack@example.gov', content: 'I would like to learn how to code, but I don\'t even know where to begin', status: 'request', tags: ['coding', 'spanish']},
+  {title: 'Need help with interview prep', urlTitle: 'barack@example.gov', content: 'I\'ve got a big interview coming up and I don\'t feel ready!', status: 'request', tags: ['coding', 'english', 'New York']},
+
+  {title: 'Public Office Hours', urlTitle: 'bgates@microsoft.com', content: 'Feel free to come meet up and ask me for help with anything you need. -Bill Gates', status: 'offer', tags: ['coding', 'english', 'Seattle']},
+  {title: 'Learn Javascript', urlTitle: 'barack@example.gov', content: 'I\'m an experienced JS developer and I\'m excited to share what I know', status: 'offer', tags: ['coding', 'spanish']},
 ], post => db.model('post').create(post))
 
 const seedUsers = () => db.Promise.map([
