@@ -5,10 +5,11 @@
 	position: relative;
 }
 .center_div{
-	 position: absolute;
+	/* position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%);*/
   width: 50%;
+  margin: 0 auto;
 }
 .navbar{
 	margin:0px;

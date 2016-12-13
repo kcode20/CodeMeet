@@ -19,7 +19,7 @@ export const Navbar = ({user, logout})=> (
     
     <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul className="nav navbar-nav navbar-right">
-        <li><a href='#'>{user?  <li><a onClick={()=> logout().then(()=> browserHistory.push('/login'))} href="#">Logout</a></li>
+        <li><a href='#'> {user?  <li><a onClick={()=> logout()} href="#">Logout</a></li>
                         : <span><Link to='/login'>Login |</Link><Link to="/signup"> Sign Up </Link></span> }</a></li>
 
       </ul>

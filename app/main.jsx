@@ -8,16 +8,14 @@ import store from './store'
 import Login from './components/Login'
 import WhoAmI from './components/WhoAmI'
 import App from './components/App'
-import Landing from './components/Landing'
 
 
 render (
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={App}>
-        <IndexRedirect to="/landing" />
+        <IndexRedirect to="/login" />
         <Route path="/login" component={Login} />
-        <Route path="/landing" component={Landing} />
       </Route>
     </Router>
   </Provider>,
