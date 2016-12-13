@@ -8,8 +8,8 @@ requests.get('/', (req, res, next) => {
       status: 'request'
     }
   })
-  .then( requests => {
-    res.send(requests);
+  .then( requestList => {
+    res.send(requestList);
   })
   .catch(next);
 });
@@ -43,5 +43,13 @@ requests.post('/', (req, res, next) => {
   })
   .catch(next);
 });
+
+requests.get('/tag/:tagName', (req, res, next) => {
+  Posts.findByTag(req.params.tagName, 'request')
+  .then(requestsList => {
+    res.send(requestsList)
+  })
+  .catch(next)
+})
 
 module.exports = requests;

@@ -8,8 +8,8 @@ offers.get('/', (req, res, next) => {
       status: 'offer'
     }
   })
-  .then( offers => {
-    res.send(offers);
+  .then( offersList => {
+    res.send(offersList);
   })
   .catch(next);
 });
@@ -43,5 +43,13 @@ offers.post('/', (req, res, next) => {
   })
   .catch(next);
 });
+
+offers.get('/tag/:tagName', (req, res, next) => {
+  Posts.findByTag(req.params.tagName, 'offer')
+  .then(offersList => {
+    res.send(offersList)
+  })
+  .catch(next)
+})
 
 module.exports = offers;

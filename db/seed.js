@@ -1,8 +1,8 @@
 const db = require('APP/db')
 
 const seedPosts = () => db.Promise.map([
-  {title: 'so many', urlTitle: 'god@example.com', content: '1234', status: 'offer'},
-  {title: 'Barack Obama', urlTitle: 'barack@example.gov', content: '1234', status: 'offer'},
+  {title: 'so many', urlTitle: 'god@example.com', content: '1234', status: 'offer', tags: ['english', 'coding']},
+  {title: 'Barack Obama', urlTitle: 'barack@example.gov', content: '1234', status: 'offer', tags: ['coding', 'spanish']},
 ], post => db.model('post').create(post))
 
 const seedUsers = () => db.Promise.map([

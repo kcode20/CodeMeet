@@ -44,12 +44,13 @@ const Post = db.define('post', {
         // }
     },
     classMethods: {
-        findByTag: function (tag) {
+        findByTag: function (tag, postType) {
             return this.findAll({
                 where: {
                     tags: {
                         $contains: [tag]
-                    }
+                    },
+                    status: postType
                 }
             });
         }
