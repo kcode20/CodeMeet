@@ -52,4 +52,16 @@ offers.get('/tag/:tagName', (req, res, next) => {
   .catch(next)
 })
 
+offers.delete('/:offerId', (req, res, next) => {
+  Posts.destroy({
+    where: {
+      id: req.params.offerId
+    }
+  })
+  .then(() => {
+    res.send(204)
+  })
+  .catch(next)
+})
+
 module.exports = offers;

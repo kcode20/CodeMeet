@@ -52,4 +52,16 @@ requests.get('/tag/:tagName', (req, res, next) => {
   .catch(next)
 })
 
+requests.delete('/:requestId', (req, res, next) => {
+  Posts.destroy({
+    where: {
+      id: req.params.requestId
+    }
+  })
+  .then(() => {
+    res.send(204)
+  })
+  .catch(next)
+})
+
 module.exports = requests;
