@@ -1,0 +1,16 @@
+.landing {
+	/*background-image: url(http://werehumans.com/wp-content/uploads/2016/04/CodingSnippet.jpg);*/
+	background-size: cover;
+	height: 100vh;
+	position: relative;
+}
+.center_div{
+	 position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50%;
+}
+.navbar{
+	margin:0px;
+	border-radius: 0px;
+}

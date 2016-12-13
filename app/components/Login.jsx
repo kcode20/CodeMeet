@@ -13,10 +13,24 @@ export const Login = ({ login }) => (
   </form>
 )
 
+//--------------------- LOGIN CONTAINER -------------------//
 import {login} from 'APP/app/reducers/auth'
 import {connect} from 'react-redux'
+import store from '../store'
 
-export default connect (
-  state => ({}),
-  {login},
-) (Login)
+
+const mapDispatchToProps= function (dispatch) {
+  return {
+      login: function(username, password){
+        return dispatch(login(username, password))
+      }, 
+      newState: function(){
+        return store.getState()
+      }
+    }
+  };
+
+export default connect(
+     null,
+     mapDispatchToProps)
+(Login)
