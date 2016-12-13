@@ -25,7 +25,7 @@ export const Navbar = ({user, logout})=> (
               </div>
               <div className="col-xs-11 text-right menu-1">
                 <ul>
-                  <li className="active"><Link to="/">Home</Link></li>
+                  <li className="active"><Link to="/home">Home</Link></li>
                   {user && <li><Link to="/offers">Offers</Link></li>}
                   <li><a href="courses.html">About Us</a></li>
                   <li><a href="contact.html">Contact</a></li>

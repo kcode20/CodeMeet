@@ -10,6 +10,7 @@ import WhoAmI from './components/WhoAmI'
 import App from './components/App'
 import Signup from './components/Signup'
 import Offers from './components/Offers'
+import Home from './components/Home'
 
 import {getOffers} from './reducers/offers'
 
@@ -21,7 +22,7 @@ render (
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={App}>
-        <IndexRedirect to="/login" />
+        <IndexRedirect to="/login"/>
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route path="/offers" onEnter={onOffersEnter} component={Offers} />
@@ -30,3 +31,5 @@ render (
   </Provider>,
   document.getElementById('main')
 )
+
+// <Route path="/home" component={Home} />
