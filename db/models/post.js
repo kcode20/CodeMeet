@@ -12,20 +12,23 @@ const Post = db.define('post', {
     urlTitle: {
         type: Sequelize.STRING,
         allowNull: false,
-        unique: true 
+        unique: true
     },
     content: {
         type: Sequelize.TEXT,
         allowNull: false
     },
     status: {
-    	type: Sequelize.ENUM('offer', 'request')
+    	type: Sequelize.ENUM('offer', 'request'),
+        allowNull: false
     },
     tags: {
         type: Sequelize.ARRAY(Sequelize.STRING),
         defaultValue: [],
         set: function (tags = []) {
-            tags = typeof tags !== 'string' ? tags : tags.split(',').map(str => str.trim())
+            tags = typeof tags !== 'string' ?
+                tags :
+                tags.split(',').map(str => str.trim())
             this.setDataValue('tags', tags);
         }
     }
