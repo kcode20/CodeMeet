@@ -8,7 +8,8 @@ import store from './store'
 import Login from './components/Login'
 import WhoAmI from './components/WhoAmI'
 import App from './components/App'
-
+import Signup from './components/Signup'
+import Offers from './components/Offers'
 
 render (
   <Provider store={store}>
@@ -16,6 +17,8 @@ render (
       <Route path="/" component={App}>
         <IndexRedirect to="/login" />
         <Route path="/login" component={Login} />
+        <Route path="/signup" component={Signup} />
+        <Route path="/offers" component={Offers} />
       </Route>
     </Router>
   </Provider>,

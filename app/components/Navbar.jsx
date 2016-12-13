@@ -2,31 +2,48 @@ import React from 'react';
 import {Link} from 'react-router';
 
 export const Navbar = ({user, logout})=> (
-
-<nav className="navbar navbar-default">
-  <div className="container-fluid">
-    
-    <div className="navbar-header">
-      <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span className="sr-only">Toggle navigation</span>
-        <span className="icon-bar"></span>
-        <span className="icon-bar"></span>
-        <span className="icon-bar"></span>
-      </button>
-      <a className="navbar-brand" href="#">CodeMeet</a>
-    </div>
-
-    
-    <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul className="nav navbar-nav navbar-right">
-        <li><a href='#'> {user?  <li><a onClick={()=> logout()} href="#">Logout</a></li>
-                        : <span><Link to='/login'>Login |</Link><Link to="/signup"> Sign Up </Link></span> }</a></li>
-
-      </ul>
-    </div>
-  </div>
-</nav>
-
+      <nav className="fh5co-nav" role="navigation">
+        <div className="top">
+          <div className="container">
+            <div className="row">
+              <div className="col-xs-12 text-right">
+                <p className="num">Call: +01 123 456 7890</p>
+                <ul className="fh5co-social">
+                  <li><a href="#"><i className="icon-twitter"></i></a></li>
+                  <li><a href="#"><i className="icon-dribbble"></i></a></li>
+                  <li><a href="#"><i className="icon-github"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="top-menu">
+          <div className="container">
+            <div className="row">
+              <div className="col-xs-1">
+                <div id="fh5co-logo"><a href="index.html">Learn<span>.</span></a></div>
+              </div>
+              <div className="col-xs-11 text-right menu-1">
+                <ul>
+                  <li className="active"><a href="index.html">Home</a></li>
+                  {user && <li><Link to="/offers">Offers</Link></li>}
+                  <li><a href="courses.html">About Us</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                   {user? <li><a onClick={()=> logout()} href="#">Logout</a></li>
+                                  :<span>
+                                  <li><span><Link to='/login'>Login</Link></span></li>
+                                  <li><span><Link to="/signup"> Sign Up </Link></span></li>
+                                  </span>
+                                }
+                  
+                  <li className="btn-cta"><a href="#"><span>Create a Course</span></a></li>
+                </ul>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </nav>
 )
 
 import {logout} from 'APP/app/reducers/auth'
