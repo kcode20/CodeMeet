@@ -22,6 +22,7 @@ const Post = db.define('post', {
     	type: Sequelize.ENUM('offer', 'request'),
         allowNull: false
     },
+    imageUrl: Sequelize.STRING,
     tags: {
         type: Sequelize.ARRAY(Sequelize.STRING),
         defaultValue: [],
